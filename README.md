@@ -42,6 +42,10 @@ Here's a walkthrough of implemented required features:
 
 https://imgur.com/a/DDRaY2E
 
+UPDATE: Vid of deletion feature
+
+https://imgur.com/a/WLKDb8B
+
 <!-- Replace this with whatever GIF tool you used! -->
 Recorded vid with Mac built-in screen recorder
 Uploaded vid onto Imgur
