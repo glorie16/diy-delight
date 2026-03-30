@@ -4,7 +4,7 @@ import favicon from 'serve-favicon'
 import dotenv from 'dotenv'
 
 // import the router from your routes file
-
+import itemsRoutes from './routes/itemsRoutes.js'
 
 dotenv.config()
 
@@ -13,6 +13,10 @@ const PORT = process.env.PORT || 3000
 const app = express()
 
 app.use(express.json())
+
+console.log('DB user:', process.env.PGUSER)
+console.log('DB name:', process.env.PGDATABASE)
+console.log('SSL enabled:', process.env.USE_SSL)
 
 if (process.env.NODE_ENV === 'development') {
     app.use(favicon(path.resolve('../', 'client', 'public', 'lightning.png')))
@@ -23,7 +27,7 @@ else if (process.env.NODE_ENV === 'production') {
 }
 
 // specify the api path for the server to use
-
+app.use('/api', itemsRoutes)
 
 if (process.env.NODE_ENV === 'production') {
     app.get('/*', (_, res) =>

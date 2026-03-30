@@ -8,17 +8,25 @@ import CarDetails from './pages/CarDetails'
 import './App.css'
 
 const App = () => {
-  let element = useRoutes([
+  const element = useRoutes([
     {
       path: '/',
-      element: <CreateCar title='BOLT BUCKET | Customize' />
+      element: <ViewCars title='BOLT BUCKET | Custom Cars' />
     },
+     {
+    path: '/customcars',  // <--- match the URL
+    element: <ViewCars title='BOLT BUCKET | Custom Cars' />
+  },
     {
-      path:'/customcars',
+      path: '/viewcars',
       element: <ViewCars title='BOLT BUCKET | Custom Cars' />
     },
     {
-      path: '/customcars/:id',
+      path: '/createcar',
+      element: <CreateCar title='BOLT BUCKET | Customize' />
+    },
+    {
+      path: '/cardetails/:id',
       element: <CarDetails title='BOLT BUCKET | View' />
     },
     {
@@ -29,11 +37,8 @@ const App = () => {
 
   return (
     <div className='app'>
-
       <Navigation />
-
-      { element }
-
+      {element}
     </div>
   )
 }
